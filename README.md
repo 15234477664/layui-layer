@@ -1,21 +1,22 @@
 # layui-layer(在vue中引入layer弹框的简易方法)
 
+1、安装layui-layer
 ```html
-1. npm i --save layui-layer
+npm i --save layui-layer
 ```
-```html
 2、在main.js中引入
+```html
 import layer from "layui-layer";
 ```
+3、在需要的地方引入且注册
 ```html
-2、在需要的地方引入且注册
 import layer from "layui-layer";
   components: {
     layer
   },
 ```
+4、然后就可以在各个组件中使用layer了
 ```html
-3、然后就可以在各个组件中使用layer了
 layer.confirm('您是如何看待前端开发？', {
   btn: ['重要','奇葩'] //按钮
     }, function(){
@@ -27,20 +28,20 @@ layer.confirm('您是如何看待前端开发？', {
    });
  });
 ```
+5、在项目中使用loading页
 ```html
-4、在项目中使用loading页
 var loading= layer.load(3, {//请求未成功时出现loading页 ,3代表一中效果
     shade: [0.1,'#fff'] //0.1透明度的白色背景
 });
 
 layer.close(loading);   //停止loading效果 
 ```
+6，1.5s后消失的提示框
 ```html
-5，1.5s后消失的提示框
 layer.msg("操作成功!",{icon:1,time:1500});//提示框
 ```
+7，询问框
 ```html
-6，询问框
 layer.confirm('是否已完成支付？', {//layer弹窗插件
       title:"信息",
       closeBtn: 0,
